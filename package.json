@@ -1,0 +1,31 @@
+{
+  "name": "jerrylist",
+  "version": "0.3.0",
+  "description": "A demo to host your UI5 application in Heroku",
+  "engines": {
+    "node": "8.14.1"
+  },
+  "main": "local.js",
+  "scripts": {
+    "start": "node --inspect local.js"
+  },
+  "dependencies": {
+    "@openui5/ts-types": "^1.60.3",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "request": "^2.81.0",
+    "tape": "^4.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/i042416/jerrylist"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}

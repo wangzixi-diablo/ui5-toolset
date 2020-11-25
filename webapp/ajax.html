@@ -1,0 +1,30 @@
+<html>
+<script src="jquery1.7.1.js"></script>
+
+<script>
+$(document).ready(function(){
+	/*
+	XMLHttpRequest cannot load https://wiki.wdf.sap.corp/wiki/display/~I042416/Jerry_home. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'null' is therefore not allowed access.
+	*/
+	
+	// https://my306768.vlab.sapbydesign.com/sap/c4c/dis?ticketid=70807
+	// https://ldai2ag3.wdf.sap.corp:44356/sap/crm/social_print?sap-client=001
+	var ag3 = "https://ldai2ag3.wdf.sap.corp:44356/sap/crm/social_print?userId=i042416";
+	var c4c = "https://my306768.vlab.sapbydesign.com/sap/c4c/dis?ticketid=70807";
+
+
+    $.when( $.ajax({
+    	url: ag3,
+    	beforeSend: function (xhr) {
+    		xhr.setRequestHeader("Authorization", "Basic V0FOR0pFUjpTYXB0ZXN0MQ==" );
+		}//,
+    	//username: "WANGJER",// "Crmops",
+    	//password: "Saptest1"// "Ondemand1"
+    })).
+	then(function(data, textStatus, jqXHR){
+     	alert( jqXHR.status ); // alerts 200
+    });
+});
+
+</script>
+</html>
