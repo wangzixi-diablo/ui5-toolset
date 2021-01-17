@@ -8,7 +8,7 @@
 		id="sap-ui-bootstrap"
 		src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
 		data-sap-ui-theme="sap_belize"
-		data-sap-ui-libs="sap.m"
+		data-sap-ui-libs="sap.m,sap.ui.layout"
 		data-sap-ui-compatVersion="edge"
 		data-sap-ui-preload="async">
 	</script>
@@ -19,10 +19,34 @@
 					console.log('live change event: ' + oEvent.getParameter('newValue'));
 				}
 		});
-		oInput.placeAt("content");
-		var html = jQuery.ajax({url:"s5.xml",async:false});
-		console.log('response: ' + html.responseText);
+		var oVerticalLayout = new sap.ui.layout.VerticalLayout();
+		oVerticalLayout.addContent(oInput);
+
+		var oHorizontalLayout = new sap.ui.layout.HorizontalLayout();
+		
+		var oLabel = new sap.m.Label({
+			text: 'Response:',
+			labelFor: 'result',
+			design: 'Bold'
 		});
+		var oResult = new sap.m.Text('result');
+		oHorizontalLayout.addContent(oLabel);
+		oHorizontalLayout.addContent(oResult);
+		//oText.setText('response');
+
+		oVerticalLayout.addContent(oHorizontalLayout);
+		oVerticalLayout.placeAt("content");
+
+		var html = jQuery.ajax({
+			url:"s5.xml",
+			dataType: 'text',
+			async:true, 
+			success:
+			(oResponse) => { 
+				oResult.setText(oResponse);
+			}
+		});
+	});
 	</script>
 </head>
 <body class="sapUiBody" role="application">
