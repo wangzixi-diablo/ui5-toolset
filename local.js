@@ -2,6 +2,7 @@ var path = require('path'), express = require('express');
 var qs = require('querystring');
 var app = express();
 var url = require("url");
+var DEFAULTPORT = 3000;
 
 app.use('/ui5', express.static(path.join(__dirname, 'webapp')));
 app.use('/wt', express.static(path.join(__dirname, 'walkthrough')));
@@ -12,6 +13,8 @@ app.use('/module', express.static(path.join(__dirname, 'module')));
 app.get('/', function(req, res){
    res.send("Hello World");
 });
+
+// /echo?data=
 
 app.get('/echo', function(req, res){
     var arg = url.parse(req.url).query;
@@ -54,6 +57,6 @@ app.post("/", function(req, res){
     		res.json(aResult);
     	});
 	});
-app.listen(process.env.PORT || 3000, function(){
-     console.log("Example app listens on port 3000.");
+app.listen(process.env.PORT || DEFAULTPORT, function(){
+     console.log("Example app listens on port: " + DEFAULTPORT);
 });
