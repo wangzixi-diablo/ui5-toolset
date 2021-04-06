@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	<title>SAPUI5 Sandbox</title>
+	<script
+		id="sap-ui-bootstrap"
+		src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+		data-sap-ui-theme="sap_belize"
+		data-sap-ui-libs="sap.ui.commons"
+		data-sap-ui-compatVersion="edge"
+		data-sap-ui-preload="async">
+	</script>
+	<script>
+		sap.ui.getCore().attachInit(function () {
+			var oButton1 = new sap.ui.commons.Button({
+				text : "Button",
+				tooltip : "This is a test tooltip",
+				press : function() {
+					alert('Alert from ' + oButton1.getText());
+					var origin = oButton1.getText();
+					oButton1.setText(origin + '1');
+				}
+		});
+
+		var oModel = new sap.ui.model.json.JSONModel();
+		var myData = {"field_for_text": "Jerry"};
+
+		oModel.setData(myData);
+		oButton1.setModel(oModel);
+		oButton1.bindProperty("text", "/field_for_text", undefined, "OneTime");
+
+		myData["field_for_text"] = "Tom";
+		oModel.checkUpdate();
+
+		oButton1.attachEvent("_change", function(oEvent) {
+  			var oChangeDetail = oEvent.getParameters();
+  			debugger;
+  		});
+		oButton1.placeAt("content");
+		});
+	</script>
+</head>
+<body class="sapUiBody" role="application">
+	<div id="content"></div>
+</body>
+</html>
+

@@ -2,7 +2,17 @@ var path = require('path'), express = require('express');
 var qs = require('querystring');
 var app = express();
 var url = require("url");
-var DEFAULTPORT = 3000;
+var DEFAULTPORT = 3002;
+
+/*app.all('*', function(req, res, next) {
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Headers", "X-Requested-With");
+      res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+      res.header("X-Powered-By",' 3.2.1');
+      //res.header("Content-Type", "application/json;charset=utf-8");
+      next();
+    });
+*/
 
 app.use('/ui5', express.static(path.join(__dirname, 'webapp')));
 app.use('/wt', express.static(path.join(__dirname, 'walkthrough')));
@@ -19,7 +29,9 @@ app.get('/', function(req, res){
 app.get('/echo', function(req, res){
     var arg = url.parse(req.url).query;
     var params = qs.parse(arg);
-    setTimeout(() => res.send(params.data),1000);
+    var response = params.dataJerry + '-------' + params.dataJerry.toLowerCase(); 
+    //setTimeout(() => res.send(params.data),1000);
+    res.send(response);
 });
 
 app.post("/", function(req, res){
