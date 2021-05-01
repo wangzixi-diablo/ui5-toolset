@@ -14,37 +14,14 @@
 				<Property Name="Price" Type="Edm.Decimal"
 						  sap:unit="CurrencyCode" sap:label="Price"
 						  sap:updatable="true"/>
-				<Property Name="Price2" Type="Edm.String"
-						  sap:label="Jerry Price"
-						  sap:updatable="true"/>
 				<Property Name="CurrencyCode" Type="Edm.String"
 						  MaxLength="3" sap:label="Currency" sap:semantics="currency-code"
 						  sap:updatable="true"/>
 			</EntityType>
-			<EntityType Name="Service">
-				<Key>
-					<PropertyRef Name="ProductId"/>
-				</Key>
-				<Property Name="ProductId" Type="Edm.String"/>
-				<Property Name="Price" Type="Edm.Decimal"
-						  sap:unit="CurrencyCode" sap:label="Price"
-						  sap:updatable="true"/>
-				<Property Name="Price2" Type="Edm.String"
-						  sap:label="Jerry Price"
-						  sap:updatable="true"/>
-				<Property Name="CurrencyCode" Type="Edm.String"
-						  MaxLength="3" sap:label="Currency" sap:semantics="currency-code"
-						  sap:updatable="true"/>
-			</EntityType>
+			
 			<EntityContainer m:IsDefaultEntityContainer="true"
 							 sap:supported-formats="atom json">
 				<EntitySet Name="Products" EntityType="com.sap.wt01.Product"
-						   sap:updatable="true"/>
-			</EntityContainer>
-			
-			<EntityContainer m:IsDefaultEntityContainer="false"
-							 sap:supported-formats="atom json">
-				<EntitySet Name="Services" EntityType="com.sap.wt01.Service"
 						   sap:updatable="true"/>
 			</EntityContainer>
 		</Schema>
