@@ -15,16 +15,19 @@
 	<script>
 		sap.ui.getCore().attachInit(function () {
 			var oButton1 = new sap.ui.commons.Button({
-				text : "Button",
+				text : "Button 1",
+				id: "JerryButton",
 				tooltip : "This is a test tooltip",
 				press : function() {
-					alert('Alert from ' + oButton1.getText());
 					var origin = oButton1.getText();
 					oButton1.setText(origin + '1');
-				}
-		});
 
-		var oModel = new sap.ui.model.json.JSONModel();
+					var oSameButton = sap.ui.getCore().byId("JerryButton");
+					jQuery.sap.assert(oButton1 === oSameButton);
+				}
+			});
+
+		/*var oModel = new sap.ui.model.json.JSONModel();
 		var myData = {"field_for_text": "Jerry"};
 
 		oModel.setData(myData);
@@ -37,7 +40,7 @@
 		oButton1.attachEvent("_change", function(oEvent) {
   			var oChangeDetail = oEvent.getParameters();
   			debugger;
-  		});
+  		});*/
 		oButton1.placeAt("content");
 		});
 	</script>

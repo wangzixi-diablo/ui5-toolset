@@ -13,7 +13,8 @@
 		data-sap-ui-preload="async">
 	</script>
 	<script>
-		sap.ui.getCore().attachInit(function () {
+		/*sap.ui.getCore().attachInit(function () {
+			
 			var oButton1 = new sap.ui.commons.Button({
 				text : "Button",
 				tooltip : "This is a test tooltip",
@@ -22,9 +23,9 @@
 					var origin = oButton1.getText();
 					oButton1.setText(origin + '1');
 				}
-		});
+			});*/
 
-		var oModel = new sap.ui.model.json.JSONModel();
+		/* var oModel = new sap.ui.model.json.JSONModel();
 		var myData = {"field_for_text": "Jerry"};
 
 		oModel.setData(myData);
@@ -39,7 +40,8 @@
   			debugger;
   		});
 		oButton1.placeAt("content");
-		});
+		});*/
+		console.log('1');
 	</script>
 </head>
 <body class="sapUiBody" role="application">

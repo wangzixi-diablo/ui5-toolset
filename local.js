@@ -4,24 +4,15 @@ var app = express();
 var url = require("url");
 var DEFAULTPORT = 3002;
 
-/*app.all('*', function(req, res, next) {
-      res.header("Access-Control-Allow-Origin", "*");
-      res.header("Access-Control-Allow-Headers", "X-Requested-With");
-      res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
-      res.header("X-Powered-By",' 3.2.1');
-      //res.header("Content-Type", "application/json;charset=utf-8");
-      next();
-    });
-*/
-
 app.use('/ui5', express.static(path.join(__dirname, 'webapp')));
 app.use('/wt', express.static(path.join(__dirname, 'walkthrough')));
 app.use('/tree', express.static(path.join(__dirname, 'tree')));
 app.use('/mindmap', express.static(path.join(__dirname, 'mindmap')));
 app.use('/module', express.static(path.join(__dirname, 'module')));
+app.use('/wechatexample', express.static(path.join(__dirname, 'forwechatblogs')));
 
 app.get('/', function(req, res){
-   res.send("Hello World");
+   res.send("你好");
 });
 
 // /echo?data=
@@ -69,6 +60,17 @@ app.post("/", function(req, res){
     		res.json(aResult);
     	});
 	});
+
+/*app.all('*', function(req, res, next) {
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Headers", "X-Requested-With");
+      res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+      res.header("X-Powered-By",' 3.2.1');
+      //res.header("Content-Type", "application/json;charset=utf-8");
+      next();
+    });
+*/
+
 app.listen(process.env.PORT || DEFAULTPORT, function(){
      console.log("Example app listens on port: " + DEFAULTPORT);
 });
