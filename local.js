@@ -9,7 +9,7 @@ app.use('/wt', express.static(path.join(__dirname, 'walkthrough')));
 app.use('/tree', express.static(path.join(__dirname, 'tree')));
 app.use('/mindmap', express.static(path.join(__dirname, 'mindmap')));
 app.use('/module', express.static(path.join(__dirname, 'module')));
-app.use('/wechatexample', express.static(path.join(__dirname, 'forwechatblogs')));
+app.use('/smartfield', express.static(path.join(__dirname, 'smartfield/webapp')));
 
 app.get('/', function(req, res){
    res.send("你好");
