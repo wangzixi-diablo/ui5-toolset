@@ -18,8 +18,6 @@
 		<form:content>
 			<smartField:SmartLabel labelFor="idPrice"/>
 			<smartField:SmartField value="{Price}" id="idPrice"/>
-			<smartField:SmartLabel labelFor="idPrice2"/>
-			<smartField:SmartField value="{Price2}" id="idPrice2"/>
 		</form:content>
 	</form:SimpleForm>
 </mvc:View>

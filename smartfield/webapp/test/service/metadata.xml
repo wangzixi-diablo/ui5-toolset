@@ -12,7 +12,7 @@
 				</Key>
 				<Property Name="ProductId" Type="Edm.String"/>
 				<Property Name="Price" Type="Edm.Decimal"
-						  sap:unit="CurrencyCode" sap:label="Price"
+						  sap:unit="CurrencyCode" sap:label="Jerry的价格"
 						  sap:updatable="true"/>
 				<Property Name="CurrencyCode" Type="Edm.String"
 						  MaxLength="3" sap:label="Currency" sap:semantics="currency-code"
