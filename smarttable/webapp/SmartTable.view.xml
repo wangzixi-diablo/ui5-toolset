@@ -8,7 +8,7 @@
 		tableType="ResponsiveTable" 
 		editable="false"
 		entitySet="Products" 
-		header="Products" 
+		header="Jerry的产品" 
 		showRowCount="true"
 		useExportToExcel="false" 
 		enableAutoBinding="true">

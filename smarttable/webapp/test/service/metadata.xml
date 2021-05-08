@@ -10,7 +10,7 @@
 				<Key>
 					<PropertyRef Name="ProductId" />
 				</Key>
-				<Property Name="ProductId" Type="Edm.String"
+				<Property Name="ProductId" Type="Edm.String" sap:label="Jerry产品ID"
 					sap:filterable="false" />
 				<Property Name="Name" Type="Edm.String" MaxLength="30"
 					sap:label="Name" sap:filterable="false" />
@@ -109,9 +109,6 @@
 						</Record>
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
 							<PropertyValue Property="Value" Path="Name" />
-						</Record>
-						<Record Type="com.sap.vocabularies.UI.v1.DataField">
-							<PropertyValue Property="Value" Path="Category" />
 						</Record>
 					</Collection>
 				</Annotation>

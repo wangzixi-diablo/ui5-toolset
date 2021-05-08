@@ -4,25 +4,19 @@ sap.ui.define([
 	"use strict";
 
 	return {
-
 		init: function () {
-
-			// create
 			var oMockServer = new MockServer({
 				rootUri: "/here/goes/your/serviceUrl/"
 			});
 
-			// configure
 			MockServer.config({
-				autoRespond: true,
+				autoRespond: true, 
 				autoRespondAfter: 1000
 			});
 
-			// simulate
 			var sPath = jQuery.sap.getModulePath("sap.ui.demo.smartControls.test.service");
 			oMockServer.simulate(sPath + "/metadata.xml", sPath);
 			
-			// handle suggest in input fields (OData search query)
 			oMockServer.attachAfter(sap.ui.core.util.MockServer.HTTPMETHOD.GET, function(oEvent) {
 				var oXhr = oEvent.getParameter("oXhr");
 				var aResultFiltered = [];
@@ -48,10 +42,7 @@ sap.ui.define([
 					oEvent.getParameter("oFilteredData").results = aResultFiltered;
 				}
 			});
-			
-			// start
 			oMockServer.start();
 		}
 	};
-
 });
