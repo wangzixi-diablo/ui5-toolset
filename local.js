@@ -10,6 +10,7 @@ app.use('/tree', express.static(path.join(__dirname, 'tree')));
 app.use('/mindmap', express.static(path.join(__dirname, 'mindmap')));
 app.use('/module', express.static(path.join(__dirname, 'module')));
 app.use('/smartfield', express.static(path.join(__dirname, 'smartfield/webapp')));
+app.use('/smarttable', express.static(path.join(__dirname, 'smarttable/webapp')));
 
 app.get('/', function(req, res){
    res.send("你好");
