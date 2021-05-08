@@ -2,18 +2,7 @@
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	controllerName="sap.ui.demo.smartControls.SmartTable"
-	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
 	xmlns:smartTable="sap.ui.comp.smarttable">
-	<smartFilterBar:SmartFilterBar 
-		id="smartFilterBar"
-		entityType="Product">
-		<smartFilterBar:controlConfiguration>
-			<smartFilterBar:ControlConfiguration
-				key="Category" visibleInAdvancedArea="true"
-				preventInitialDataFetchInValueHelpDialog="false">
-			</smartFilterBar:ControlConfiguration>
-		</smartFilterBar:controlConfiguration>
-	</smartFilterBar:SmartFilterBar>
 	<smartTable:SmartTable 
 		id="smartTable_ResponsiveTable"
 		smartFilterId="smartFilterBar" 
