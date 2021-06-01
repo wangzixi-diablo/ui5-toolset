@@ -3,3 +3,7 @@
 启动方式： node local.js
 
 * echo service: http://localhost:3000/echo?data=1
+
+### OData 测试
+
+* [app](https://github.com/wangzixi-diablo/ui5-toolset/tree/main/odata-table) - [解决 Chrome 跨域问题](https://zhuanlan.zhihu.com/p/376910773)
