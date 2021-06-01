@@ -1,3 +1,4 @@
+// @ts-nocheck
 var path = require('path'), express = require('express');
 var qs = require('querystring');
 var app = express();
@@ -11,6 +12,7 @@ app.use('/mindmap', express.static(path.join(__dirname, 'mindmap')));
 app.use('/module', express.static(path.join(__dirname, 'module')));
 app.use('/smartfield', express.static(path.join(__dirname, 'smartfield/webapp')));
 app.use('/smarttable', express.static(path.join(__dirname, 'smarttable/webapp')));
+app.use('/odatatable', express.static(path.join(__dirname, 'odata-table')));
 
 app.get('/', function(req, res){
    res.send("你好");

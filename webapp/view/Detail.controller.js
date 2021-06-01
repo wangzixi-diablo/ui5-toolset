@@ -1,3 +1,4 @@
+// @ts-nocheck
 jQuery.sap.require("jerrylist.util.Formatter");
 jQuery.sap.require("sap.m.MessageBox"); 
 jQuery.sap.require("sap.m.MessageToast");
