@@ -18,7 +18,7 @@ app.get('/', function(req, res){
    res.send("你好");
 });
 
-// /echo?data=
+// this service is designed for C:\Code\SPA\sandbox\src\app\react-form
 
 app.get('/echo', function(req, res){
     var arg = url.parse(req.url).query;
