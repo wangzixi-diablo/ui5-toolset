@@ -1,0 +1,1 @@
+[SAP Fiori 页面的周期性动态刷新功能的实现步骤](https://mp.weixin.qq.com/s?__biz=MzI3MDE4MjM5Mg==&mid=2247492489&idx=1&sn=d3427d57c7db13730e4a46cb48c38870&chksm=ead6511edda1d808f6c2477837a715f30b446f3ee917651ea94a40fdd4f29912cf5b387874dd&token=1539822236&lang=zh_CN#rd)
