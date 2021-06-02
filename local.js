@@ -23,8 +23,8 @@ app.get('/', function(req, res){
 app.get('/echo', function(req, res){
     var arg = url.parse(req.url).query;
     var params = qs.parse(arg);
-    var response = params.dataJerry + '-------' + params.dataJerry.toLowerCase(); 
-    //setTimeout(() => res.send(params.data),1000);
+    var response = params.data + '-------' + params.data.toLowerCase(); 
+    res.header("Access-Control-Allow-Origin", "*");
     res.send(response);
 });
 
@@ -64,16 +64,6 @@ app.post("/", function(req, res){
     	});
 	});
 
-/*app.all('*', function(req, res, next) {
-      res.header("Access-Control-Allow-Origin", "*");
-      res.header("Access-Control-Allow-Headers", "X-Requested-With");
-      res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
-      res.header("X-Powered-By",' 3.2.1');
-      //res.header("Content-Type", "application/json;charset=utf-8");
-      next();
-    });
-*/
-
 app.listen(process.env.PORT || DEFAULTPORT, function(){
-     console.log("Example app listens on port: " + DEFAULTPORT);
+     console.log("App listens on port: " + process.env.PORT || DEFAULTPORT);
 });
