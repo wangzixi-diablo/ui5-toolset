@@ -1,19 +1,21 @@
 <mvc:View 
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
 	controllerName="sap.ui.jerry.odatatable.table">
-	<Text text="This is table title"/>
+	<l:HorizontalLayout class="sapUiContentPadding">
+	<Label text="Refresh Count:" labelFor="counter" />
+	<Text id="counter"/>
+	</l:HorizontalLayout>
 	<Table id="producttable" items="{/Products}">
 	<columns>
 		<Column width="12em">
-			<Text text="ProductID" />
+			<Text text="Product ID" />
 		</Column>
-		
 		<Column demandPopin="true">
-			<Text text="ProductName" />
+			<Text text="Product Name" />
 		</Column>	
 	</columns>
-	
 	<items>
 		<ColumnListItem>
 			<cells>
