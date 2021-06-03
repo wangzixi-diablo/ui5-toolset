@@ -4,6 +4,7 @@ var qs = require('querystring');
 var app = express();
 var url = require("url");
 var DEFAULTPORT = 3002;
+var port = process.env.PORT || DEFAULTPORT;
 
 app.use('/ui5', express.static(path.join(__dirname, 'webapp')));
 app.use('/wt', express.static(path.join(__dirname, 'walkthrough')));
@@ -13,6 +14,8 @@ app.use('/module', express.static(path.join(__dirname, 'module')));
 app.use('/smartfield', express.static(path.join(__dirname, 'smartfield/webapp')));
 app.use('/smarttable', express.static(path.join(__dirname, 'smarttable/webapp')));
 app.use('/odatatable', express.static(path.join(__dirname, 'odata-table')));
+
+app.use('/a', express.static(path.join(__dirname, 'b')));
 
 app.get('/', function(req, res){
    res.send("你好");
@@ -64,6 +67,6 @@ app.post("/", function(req, res){
     	});
 	});
 
-app.listen(process.env.PORT || DEFAULTPORT, function(){
-     console.log("App listens on port: " + process.env.PORT || DEFAULTPORT);
+app.listen(port, function(){
+     console.log("App listens on port: " + port);
 });

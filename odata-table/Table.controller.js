@@ -8,7 +8,7 @@ sap.ui.define([
 
 		counter: 0,
 		onInit: function() {
-			this._trigger = new sap.ui.core.IntervalTrigger(1  * 100 );
+			this._trigger = new sap.ui.core.IntervalTrigger(3  * 1000 );
    			this._trigger.addListener(this.onRefreshTriggered, this);
 		},
 		onRefreshTriggered: function () {
