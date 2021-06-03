@@ -15,8 +15,6 @@ app.use('/smartfield', express.static(path.join(__dirname, 'smartfield/webapp'))
 app.use('/smarttable', express.static(path.join(__dirname, 'smarttable/webapp')));
 app.use('/odatatable', express.static(path.join(__dirname, 'odata-table')));
 
-app.use('/a', express.static(path.join(__dirname, 'b')));
-
 app.get('/', function(req, res){
    res.send("你好");
 });
