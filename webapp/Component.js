@@ -28,43 +28,14 @@ sap.ui.define([
             }
          }
       },
-      renderer: {}/*,
-      constructor: function(oRef) {
-         this.application = oRef.application;
-         Button.apply(this, arguments);
-      }*/
+      renderer: {}
    });
 
-   var oApplication = {
-   	"Jerry": "i042416"
-   }; 
-/*
-   JerryButton.prototype.constructor = function(oRef){
-		console.log("I am here");
-		debugger;
-	}; 
-	*/
-
-
-  var AnotherButton = function(oRef){
-		console.log("I am here");
-	}; 
-
-  AnotherButton.prototype = Object.create(Button.prototype);
-  AnotherButton.prototype.constructor = function(){
-  }
-
-  var oJerryButton = new AnotherButton({ application: oApplication } );
 	return UIComponent.extend("jerrylist.Component", {
 		metadata: {
 			manifest: "json"
 		},
 
-		/**
-		 * The component is initialized by UI5 automatically during the startup of the app and calls the init method once.
-		 * @public
-		 * @override
-		 */
 		init: function() {
 			UIComponent.prototype.init.apply(this, arguments);
 
