@@ -12,13 +12,10 @@
 				data-sap-ui-resourceroots='{"jerrylist": ""}'
 				>
 		</script>
-		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
-
 		<script>
 		
 				sap.ui.getCore().attachInit(function(){
-					sap.ui.core.ComponentContainer({
-						//after componentContainer is created then create component
+					new sap.ui.core.ComponentContainer({
 						name:"jerrylist"
 					}).placeAt("content");
 				});
