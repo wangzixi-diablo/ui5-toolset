@@ -1,3 +1,4 @@
+// @ts-nocheck
 jQuery.sap.require("jerrylist.util.Formatter");
 jQuery.sap.require("jerrylist.util.Grouper");
 sap.ui.controller("jerrylist.view.Master", {
@@ -22,8 +23,9 @@ sap.ui.controller("jerrylist.view.Master", {
 		var list = this.getView().byId("list");
 		var binding = list.getBinding("items");
 		binding.filter(filters);
-	}
-	, handleListSelect : function (evt) { 
+	}, 
+	
+	handleListSelect : function (evt) { 
 		var context = evt.getParameter("listItem").getBindingContext(); 
 		this.nav.to("Detail", context); 
 	},

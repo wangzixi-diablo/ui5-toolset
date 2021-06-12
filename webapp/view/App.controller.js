@@ -1,3 +1,4 @@
+// @ts-nocheck
 sap.ui.controller("jerrylist.view.App", {
 	
 	/**
@@ -8,7 +9,6 @@ sap.ui.controller("jerrylist.view.App", {
 	to : function (pageId, context) {
 		
 		var app = this.getView().app;
-		
 		// load page on demand
 		var master = ("Master" === pageId);
 		if (app.getPage(pageId, master) === null) {

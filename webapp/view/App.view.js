@@ -1,3 +1,4 @@
+// @ts-nocheck
 sap.ui.jsview("jerrylist.view.App", {
 
 	getControllerName: function () {

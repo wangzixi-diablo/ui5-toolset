@@ -1,7 +1,7 @@
 <core:View
 	xmlns="sap.m"
 	xmlns:core="sap.ui.core" >
-	<Page>
+	<Page title="{i18n>EmptyTitle}">
 	<footer> 
 	<Bar> 
 	</Bar> 
