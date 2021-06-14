@@ -5,20 +5,20 @@
 	controllerName="sap.ui.demo.CombineLatest.Combine">
 	<l:VerticalLayout class="sapUiContentPadding">
 		<l:HorizontalLayout class="sapUiContentPadding" >
-			<Button text="Red" press="onPressRed" />
-			<Button text="Black" press="onPressBlack" />
+			<Button text="Red" press="onPress" />
+			<Button text="Black" press="onPress" />
 		</l:HorizontalLayout>
 		<l:HorizontalLayout>
 			<Label text="Red:" labelFor="red"/>
-			<Text text="{/field_for_text}" id="red"/>
+			<Text text="{/red}" id="red"/>
 		</l:HorizontalLayout>
 		<l:HorizontalLayout>
 			<Label text="Black:" labelFor="black"/>
-			<Text text="" id="black"/>
+			<Text text="{/black}" id="black"/>
 		</l:HorizontalLayout>
 		<l:HorizontalLayout>
 			<Label text="Total:" labelFor="total"/>
-			<Text text="" id="total"/>
+			<Text text="{/total}" id="total"/>
 		</l:HorizontalLayout>
 	</l:VerticalLayout>
 </mvc:View>

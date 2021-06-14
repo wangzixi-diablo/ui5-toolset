@@ -4,13 +4,27 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("sap.ui.demo.CombineLatest.Combine", {
-		onInit: function() {
-			var oModel = new sap.ui.model.json.JSONModel();
-			var myData = {"field_for_text": "Jerry"};
 
-			oModel.setData(myData);
-			debugger;
-			this.getView().setModel(oModel);
+		initDataModel:function(){
+			this.oModel = new sap.ui.model.json.JSONModel();
+			this.oData = {"red": 0, "black": 0, "total": 0};
+
+			this.oModel.setData(this.oData);
+			this.getView().setModel(this.oModel);
+		},
+		onInit: function() {
+			this.initDataModel();
+		},
+
+		updateButtonCounter: function(oEvent){
+			oEvent.getSource().getText() === "Red" ?
+				this.oData.red++: this.oData.black++;
+			this.oData.total++;
+			this.oModel.checkUpdate();
+		},
+		
+		onPress: function(oEvent){
+			this.updateButtonCounter(oEvent);
 		}
 	});
 });
