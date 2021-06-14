@@ -1,0 +1,20 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="sap.ui.demo.CombineLatest.Combine"
+	xmlns:form="sap.ui.layout.form">
+	<form:SimpleForm 
+		minWidth="1024"
+		maxContainerCols="2"
+		editable="true"
+		layout="ResponsiveGridLayout"
+		labelSpanL="3"
+		labelSpanM="3"
+		emptySpanL="4"
+		emptySpanM="4"
+		columnsL="1"
+		columnsM="1"
+		class="editableForm">
+		<form:content>
+		</form:content>
+	</form:SimpleForm>
+</mvc:View>
