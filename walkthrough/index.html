@@ -26,21 +26,6 @@
 					jQuery.sap.assert(oButton1 === oSameButton);
 				}
 			});
-
-		/*var oModel = new sap.ui.model.json.JSONModel();
-		var myData = {"field_for_text": "Jerry"};
-
-		oModel.setData(myData);
-		oButton1.setModel(oModel);
-		oButton1.bindProperty("text", "/field_for_text", undefined, "OneTime");
-
-		myData["field_for_text"] = "Tom";
-		oModel.checkUpdate();
-
-		oButton1.attachEvent("_change", function(oEvent) {
-  			var oChangeDetail = oEvent.getParameters();
-  			debugger;
-  		});*/
 		oButton1.placeAt("content");
 		});
 	</script>

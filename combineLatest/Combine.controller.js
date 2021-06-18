@@ -1,6 +1,7 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function(Controller) {
+	"sap/ui/core/mvc/Controller",
+	"sap/ui/demo/CombineLatest/lib/vconsole-min"
+], function(Controller, VConsole) {
 	"use strict";
 
 	return Controller.extend("sap.ui.demo.CombineLatest.Combine", {
@@ -12,7 +13,13 @@ sap.ui.define([
 			this.oModel.setData(this.oData);
 			this.getView().setModel(this.oModel);
 		},
+
+		initVConsole: function(){
+			var vConsole = new window.VConsole();
+        	console.log('Hello world');
+		},
 		onInit: function() {
+			this.initVConsole();
 			this.initDataModel();
 		},
 
