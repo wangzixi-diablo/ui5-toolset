@@ -10,6 +10,9 @@ sap.ui.define([
 		onInit: function() {
 			this._trigger = new sap.ui.core.IntervalTrigger(3  * 1000 );
    			this._trigger.addListener(this.onRefreshTriggered, this);
+
+   			var vConsole = new window.VConsole();
+        	console.log('Hello world');
 		},
 		onRefreshTriggered: function () {
 			var oBinding = this.byId("producttable").getBinding("items");

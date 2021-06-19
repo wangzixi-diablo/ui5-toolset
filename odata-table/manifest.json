@@ -27,6 +27,13 @@
   "sap.ui5": {
 	"_version": "1.1.0",
 	"rootView": "sap.ui.jerry.odatatable.Table",
+	"resources":{
+		"js": [ {
+				"uri": "lib/vconsole-min.js",
+				"name": "vconsole-min.js",
+				"version": "3.7.0"
+			}]
+	},
 	"dependencies": {
 	  "minUI5Version": "1.30",
 	  "libs": {
