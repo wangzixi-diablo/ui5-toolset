@@ -23,7 +23,7 @@ jerrylist.util.Formatter = {
 		if (value) {
 			var oDateFormat = sap.ui.core.format.DateFormat.getDateTimeInstance({pattern: "yyyy-MM-dd"});
 			var formattedValue = oDateFormat.format(new Date(value));
-			console.warn("formatted date: " + formattedValue);
+			// console.warn("formatted date: " + formattedValue);
 			return formattedValue;
 		} else {
 			return value;

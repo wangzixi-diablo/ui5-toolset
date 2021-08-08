@@ -9,11 +9,12 @@ sap.ui.controller("jerrylist.view.Detail", {
 		this.nav.back("Master");
 	},
 	onBeforeRendering:function(){ 
+		console.log('Detail controller onBeforeRendering called');
 		this.byId("SupplierForm").bindElement("BusinessPartner"); 
 	},
 	
 	onInit: function() {
-		
+		console.log('Detail controller onInit called');
 	},
 	handleApprove : function (evt) {
 
