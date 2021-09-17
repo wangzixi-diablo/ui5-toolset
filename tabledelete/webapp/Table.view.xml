@@ -1,6 +1,37 @@
-<mvc:View
-	xmlns:mvc="sap.ui.core.mvc"
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
 	controllerName="sap.ui.demo.tabledelete.Table"
-	xmlns="sap.m">
-	
-</mvc:View>
+xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Jerry Table">
+		<content>
+			<Table id="ins" items="{/Products}">
+			<headerToolbar>
+			<Toolbar>
+				<Button icon="sap-icon://add" text="Row" press="addRow"/>
+			</Toolbar>
+		</headerToolbar>
+			<columns>
+			<Column width="50px"/>
+			
+			<Column>
+				<Text text="Product" />
+			</Column>
+			
+			 <Column
+				minScreenWidth="Tablet"
+				demandPopin="true"
+				>
+				<Text text="Dimensions" />
+			</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+				<cells>
+					<Button icon="sap-icon://delete" press="deleteRow" type="Reject"/>
+					<Input value="{Name}"/><Input value="{size}"/>
+				</cells>
+			</ColumnListItem>
+			</items>
+			</Table>
+		</content>
+	</Page>
+</core:View>
