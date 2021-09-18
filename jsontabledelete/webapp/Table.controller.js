@@ -9,8 +9,8 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function(Controller) {
 				            { Name : 'Jerry 产品2' , Size : 'XXS'}
 				            ]	
 			};
-			this.jModel = new sap.ui.model.json.JSONModel();
-			this.jModel.setData(this.data);
+			// @ts-ignore
+			this.jModel = new sap.ui.model.json.JSONModel(this.data);
 			oTable.setModel(this.jModel);	
 		},
 		addRow : function(oArg){
