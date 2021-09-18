@@ -13,7 +13,7 @@
 				<Property Name="ProductId" Type="Edm.String"/>
 				<Property Name="Name" Type="Edm.String"
 						  />
-				<Property Name="size" Type="Edm.String"
+				<Property Name="Size" Type="Edm.String"
 						  />
 			</EntityType>
 			

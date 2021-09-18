@@ -2,11 +2,11 @@
   {
 	"ProductId": "4711",
 	"Name": "Jerry的产品1",
-	"size": "XXL"
+	"Size": "XXL"
   },
   {
 	"ProductId": "4712",
 	"Name": "Jerry的产品2",
-	"size": "XXX"
+	"Size": "XXX"
   }
 ]

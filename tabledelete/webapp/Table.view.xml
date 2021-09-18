@@ -1,9 +1,8 @@
 <core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
 	controllerName="sap.ui.demo.tabledelete.Table"
 xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page title="Jerry Table">
-		<content>
-			<Table id="ins" items="{/Products}">
+		
+		<Table id="ins" items="{/Products}">
 			<headerToolbar>
 			<Toolbar>
 				<Button icon="sap-icon://add" text="Row" press="addRow"/>
@@ -27,11 +26,9 @@ xmlns:html="http://www.w3.org/1999/xhtml">
 				<ColumnListItem>
 				<cells>
 					<Button icon="sap-icon://delete" press="deleteRow" type="Reject"/>
-					<Input value="{Name}"/><Input value="{size}"/>
+					<Input value="{Name}"/><Input value="{Size}"/>
 				</cells>
 			</ColumnListItem>
 			</items>
 			</Table>
-		</content>
-	</Page>
 </core:View>
