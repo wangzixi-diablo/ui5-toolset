@@ -13,6 +13,7 @@ app.use('/mindmap', express.static(path.join(__dirname, 'mindmap')));
 app.use('/module', express.static(path.join(__dirname, 'module')));
 app.use('/smartfield', express.static(path.join(__dirname, 'smartfield/webapp')));
 app.use('/tabledelete', express.static(path.join(__dirname, 'tabledelete/webapp')));
+app.use('/jsontabledelete', express.static(path.join(__dirname, 'jsontabledelete/webapp')));
 app.use('/smarttable', express.static(path.join(__dirname, 'smarttable/webapp')));
 app.use('/odatatable', express.static(path.join(__dirname, 'odata-table')));
 app.use('/combine', express.static(path.join(__dirname, 'combineLatest')));

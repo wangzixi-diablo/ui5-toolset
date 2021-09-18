@@ -1,12 +1,10 @@
-sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function(Controller) {
+sap.ui.define(["sap/ui/core/mvc/Controller"], function(Controller) {
 	"use strict";
-
 	return Controller.extend("sap.ui.demo.tabledelete.Table", {
 		onInit: function() {
 			var oTable = this.byId("jerrytable");
 			var sServiceUrl = "/here/goes/your/serviceUrl/";
+			// @ts-ignore
 			oTable.oModel = new sap.ui.model.odata.ODataModel(sServiceUrl, true);
 			oTable.setModel(oTable.oModel);
 		},
@@ -19,7 +17,6 @@ sap.ui.define([
 			oTable.oModel.create("/Products", oNewProduct, {success: ()=> alert("new Product created ok."), error: 
 			() => alert("Product creation failed.")});
 		},
-
 		deleteRow: function(oEvent){
 			var oTable = this.byId("jerrytable");
 			var oSelectedItem = oEvent.getSource().getBindingContext().getObject();
