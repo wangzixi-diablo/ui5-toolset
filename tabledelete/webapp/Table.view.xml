@@ -2,7 +2,7 @@
 	controllerName="sap.ui.demo.tabledelete.Table"
 xmlns:html="http://www.w3.org/1999/xhtml">
 		
-		<Table id="ins" items="{/Products}">
+		<Table id="jerrytable" items="{/Products}">
 			<headerToolbar>
 			<Toolbar>
 				<Button icon="sap-icon://add" text="Row" press="addRow"/>
