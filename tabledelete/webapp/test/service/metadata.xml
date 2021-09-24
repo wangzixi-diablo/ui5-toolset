@@ -4,23 +4,16 @@
 		   xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
 		   xmlns:sap="http://www.sap.com/Protocols/SAPData">
 	<edmx:DataServices m:DataServiceVersion="2.0">
-		<Schema Namespace="com.sap.wt01"
-				sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+		<Schema Namespace="com.sap.jerry"
+sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
 			<EntityType Name="Product">
-				<Key>
-					<PropertyRef Name="ProductId"/>
-				</Key>
+				<Key><PropertyRef Name="ProductId"/></Key>
 				<Property Name="ProductId" Type="Edm.String"/>
-				<Property Name="Name" Type="Edm.String"
-						  />
-				<Property Name="Size" Type="Edm.String"
-						  />
+				<Property Name="Name" Type="Edm.String"/>
+				<Property Name="Size" Type="Edm.String"/>
 			</EntityType>
-			
-			<EntityContainer m:IsDefaultEntityContainer="true"
-							 sap:supported-formats="atom json">
-				<EntitySet Name="Products" EntityType="com.sap.wt01.Product"
-						   sap:updatable="true"/>
+			<EntityContainer m:IsDefaultEntityContainer="true">
+				<EntitySet Name="Products" EntityType="com.sap.jerry.Product" />
 			</EntityContainer>
 		</Schema>
 	</edmx:DataServices>

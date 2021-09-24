@@ -18,6 +18,7 @@ app.use('/smarttable', express.static(path.join(__dirname, 'smarttable/webapp'))
 app.use('/odatatable', express.static(path.join(__dirname, 'odata-table')));
 app.use('/combine', express.static(path.join(__dirname, 'combineLatest')));
 app.use('/purehtml', express.static(path.join(__dirname, 'purehtml')));
+app.use('/chart', express.static(path.join(__dirname, 'chart')));
 
 
 app.get('/', function(req, res){

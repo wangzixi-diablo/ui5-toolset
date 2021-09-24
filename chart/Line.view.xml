@@ -1,0 +1,77 @@
+<mvc:View controllerName="sap.viz.sample.Line.Line" xmlns="sap.m"
+    xmlns:viz="sap.viz.ui5.controls" xmlns:layout="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data" height="100%">
+    <layout:FixFlex id='chartFixFlex' minFlexSize="250">
+        <!--Below is the setting panel -->
+        <layout:fixContent>
+            <Panel id='settingsPanel' class="panelStyle" expandable="true" expanded="true" headerText="Settings" width="auto">
+                <content>
+                    <HBox class='settingsHBox'>
+                    <VBox class='settingsBox'>
+                        <Label text="{/dataset/name}" design="Bold" class='settingsLabel'></Label>
+                        <RadioButtonGroup id='datasetRadioGroup'
+                                buttons="{path: '/dataset/values'}">
+                            <buttons>
+                                <RadioButton class='settingsRadio' text="{name}" select="onDatasetSelected"/>
+                            </buttons>
+                        </RadioButtonGroup>
+                    </VBox>
+                    <VBox class='settingsBox'>
+                        <Label text='{/series/name}' design="Bold" class='settingsLabel'></Label>
+                        <RadioButtonGroup id='seriesRadioGroup'
+                            buttons="{path: '/series/values'}" >
+                            <buttons>
+                                <RadioButton class='settingsRadio' text="{name}" select='onSeriesSelected'/>
+                            </buttons>
+                        </RadioButtonGroup>
+                    </VBox>
+                    <VBox class='settingsBox'>
+                        <Label text = '{/dataLabel/name}' design="Bold" class='settingsLabel'></Label>
+                        <Switch class='settingsSwitch' state="{/dataLabel/defaultState}" change='onDataLabelChanged'>
+                            <layoutData>
+                                <FlexItemData growFactor="1" />
+                            </layoutData>
+                        </Switch>
+                    </VBox>
+                    <VBox class='settingsBox'>
+                        <Label text = '{/axisTitle/name}' design="Bold" class='settingsLabel'></Label>
+                        <Switch class='settingsSwitch' state="{/axisTitle/defaultState}" change='onAxisTitleChanged'>
+                            <layoutData>
+                                <FlexItemData growFactor="1" />
+                            </layoutData>
+                        </Switch>
+                    </VBox>
+                    </HBox>
+                </content>
+            </Panel>
+        </layout:fixContent>
+        <layout:flexContent>
+            <viz:Popover id="idPopOver"></viz:Popover>
+            <viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}"
+                height='100%' width="100%" vizType='line'>
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{/milk}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="Week"
+                                value="{Week}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="Revenue"
+                                value="{Revenue}" />
+                            <viz.data:MeasureDefinition name="Cost"
+                                value="{Cost}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+
+                <viz:feeds>
+                    <viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure"
+                        values="Revenue" />
+                    <viz.feeds:FeedItem id='categoryAxisFeed' uid="categoryAxis" type="Dimension"
+                        values="Week" />
+                </viz:feeds>
+            </viz:VizFrame>
+        </layout:flexContent>
+    </layout:FixFlex>
+</mvc:View>
