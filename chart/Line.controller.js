@@ -11,77 +11,13 @@ sap.ui.define([
 
     var Controller = Controller.extend("sap.viz.sample.Line.Line", {
 
-        dataPath : "sampledata",
-
-        settingsModel : {
-            dataset : {
-                name: "Dataset",
-                defaultSelected : 1,
-                values : [{
-                    name : "Small",
-                    value : "/betterSmall.json"
-                },{
-                    name : "Medium",
-                    value : "/betterMedium.json"
-                },{
-                    name : "Large",
-                    value : "/betterLarge.json"
-                }]
-            },
-            series : {
-                name : "Series",
-                defaultSelected : 0,
-                values : [{
-                    name : "1 Series",
-                    value : ["Revenue"]
-                }, {
-                    name : '2 Series',
-                    value : ["Revenue", "Cost"]
-                }]
-            },
-            dataLabel : {
-                name : "Value Label",
-                defaultState : true
-            },
-            axisTitle : {
-                name : "Axis Title",
-                defaultState : false
-            },
-            dimensions: {
-                Small: [{
-                    name: 'Seasons',
-                    value: "{Seasons}"
-                }],
-                Medium: [{
-                    name: 'Week',
-                    value: "{Week}"
-                }],
-                Large: [{
-                    name: 'Week',
-                    value: "{Week}"
-                }]
-            },
-            measures: [{
-               name: 'Revenue',
-               value: '{Revenue}'
-            },{
-               name: 'Cost',
-               value: '{Cost}'
-            }]
-        },
-
+        dataPath : "sampledata/data.json",
         oVizFrame : null,
-
         onInit : function (evt) {
             Format.numericFormatter(ChartFormatter.getInstance());
             var formatPattern = ChartFormatter.DefaultPattern;
             // set explored app's demo model on this sample
             
-            // 数据绑定
-            var oModel = new JSONModel(this.settingsModel);
-            oModel.setDefaultBindingMode(BindingMode.OneWay);
-            this.getView().setModel(oModel);
-
             var oVizFrame = this.oVizFrame = this.getView().byId("jerryFrame");
             oVizFrame.setVizProperties({
                 plotArea: {
@@ -95,20 +31,20 @@ sap.ui.define([
                         formatString: formatPattern.SHORTFLOAT
                     },
                     title: {
-                        visible: false
+                        visible: true
                     }
                 },
                 categoryAxis: {
                     title: {
-                        visible: false
+                        visible: true
                     }
                 },
                 title: {
-                    visible: false,
-                    text: 'Revenue by City and Store Name'
+                    visible: true,
+                    text: 'Jerry 的折线图'
                 }
             });
-            var dataModel = new JSONModel(this.dataPath + "/betterMedium.json");
+            var dataModel = new JSONModel(this.dataPath);
             oVizFrame.setModel(dataModel);
 
             var oPopOver = this.getView().byId("idPopOver");
@@ -116,79 +52,6 @@ sap.ui.define([
             oPopOver.setFormatString(formatPattern.STANDARDFLOAT);
 
             InitPageUtil.initPageSettings(this.getView());
-        },
-        onAfterRendering : function(){
-            var datasetRadioGroup = this.getView().byId('datasetRadioGroup');
-            datasetRadioGroup.setSelectedIndex(this.settingsModel.dataset.defaultSelected);
-
-            var seriesRadioGroup = this.getView().byId('seriesRadioGroup');
-            seriesRadioGroup.setSelectedIndex(this.settingsModel.series.defaultSelected);
-        },
-        onDatasetSelected : function(oEvent){
-            var datasetRadio = oEvent.getSource();
-            if (this.oVizFrame && datasetRadio.getSelected()){
-                var bindValue = datasetRadio.getBindingContext().getObject();
-                var dataset = {
-                    data: {
-                        path: "/milk"
-                    }
-                };
-                var dim = this.settingsModel.dimensions[bindValue.name];
-                dataset.dimensions = dim;
-                dataset.measures = this.settingsModel.measures;
-                var oDataset = new FlattenedDataset(dataset);
-                this.oVizFrame.setDataset(oDataset);
-                var dataModel = new JSONModel(this.dataPath + bindValue.value);
-                this.oVizFrame.setModel(dataModel);
-
-                var feedCategoryAxis = this.getView().byId('categoryAxisFeed');
-                this.oVizFrame.removeFeed(feedCategoryAxis);
-                var feed = [];
-                for (var i = 0; i < dim.length; i++) {
-                    feed.push(dim[i].name);
-                }
-                feedCategoryAxis.setValues(feed);
-                this.oVizFrame.addFeed(feedCategoryAxis);
-            }
-        },
-        onSeriesSelected : function(oEvent){
-            var seriesRadio = oEvent.getSource();
-            if (this.oVizFrame && seriesRadio.getSelected()){
-                var bindValue = seriesRadio.getBindingContext().getObject();
-
-                var feedValueAxis = this.getView().byId('valueAxisFeed');
-                this.oVizFrame.removeFeed(feedValueAxis);
-                feedValueAxis.setValues(bindValue.value);
-                this.oVizFrame.addFeed(feedValueAxis);
-            }
-        },
-        onDataLabelChanged : function(oEvent){
-            if (this.oVizFrame){
-                this.oVizFrame.setVizProperties({
-                    plotArea: {
-                        dataLabel: {
-                            visible: oEvent.getParameter('state')
-                        }
-                    }
-                });
-            }
-        },
-        onAxisTitleChanged : function(oEvent){
-            if (this.oVizFrame){
-                var state = oEvent.getParameter('state');
-                this.oVizFrame.setVizProperties({
-                    valueAxis: {
-                        title: {
-                            visible: state
-                        }
-                    },
-                    categoryAxis: {
-                        title: {
-                            visible: state
-                        }
-                    }
-                });
-            }
         }
     });
 
