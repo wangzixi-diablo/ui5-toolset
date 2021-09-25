@@ -11,7 +11,7 @@ sap.ui.define([
 
     var Controller = Controller.extend("sap.viz.sample.Line.Line", {
 
-        dataPath : "test-resources/sap/viz/demokit/dataset/milk_production_testing_data/revenue_cost_consume",
+        dataPath : "sampledata",
 
         settingsModel : {
             dataset : {
