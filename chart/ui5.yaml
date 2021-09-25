@@ -1,8 +1,0 @@
-specVersion: '2.3'
-metadata:
-  name: "sap.viz.sample.Line"
-type: application
-resources:
-  configuration:
-    paths:
-      webapp: .
