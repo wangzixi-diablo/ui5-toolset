@@ -48,7 +48,7 @@
         </layout:fixContent>
         <layout:flexContent>
             <viz:Popover id="idPopOver"></viz:Popover>
-            <viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}"
+            <viz:VizFrame id="jerryFrame" uiConfig="{applicationSet:'fiori'}"
                 height='100%' width="100%" vizType='line'>
                 <viz:dataset>
                     <viz.data:FlattenedDataset data="{/milk}">

@@ -21,7 +21,7 @@ sap.ui.define([
             });
             if (bSuiteAvailable) {
                 jQuery.sap.require("sap/suite/ui/commons/ChartContainer");
-                var vizframe = oView.byId("idVizFrame");
+                var vizframe = oView.byId("jerryFrame");
                 var oChartContainerContent = new sap.suite.ui.commons.ChartContainerContent({
                     icon : "sap-icon://line-chart",
                     title : "vizFrame Line Chart Sample",

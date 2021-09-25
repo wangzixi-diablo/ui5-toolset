@@ -76,11 +76,13 @@ sap.ui.define([
             Format.numericFormatter(ChartFormatter.getInstance());
             var formatPattern = ChartFormatter.DefaultPattern;
             // set explored app's demo model on this sample
+            
+            // 数据绑定
             var oModel = new JSONModel(this.settingsModel);
             oModel.setDefaultBindingMode(BindingMode.OneWay);
             this.getView().setModel(oModel);
 
-            var oVizFrame = this.oVizFrame = this.getView().byId("idVizFrame");
+            var oVizFrame = this.oVizFrame = this.getView().byId("jerryFrame");
             oVizFrame.setVizProperties({
                 plotArea: {
                     dataLabel: {
