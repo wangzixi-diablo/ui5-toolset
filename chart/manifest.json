@@ -24,17 +24,6 @@
 				"sap.ui.layout": {},
 				"sap.m": {}
 			}
-		},
-		"config": {
-			"sample": {
-				"stretch": true,
-				"files": [
-					"Line.view.xml",
-					"Line.controller.js",
-					"InitPage.js",
-					"manifest.json"
-				]
-			}
 		}
 	}
 }
