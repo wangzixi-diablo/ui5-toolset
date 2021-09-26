@@ -5,12 +5,9 @@ sap.ui.define([
         'sap/viz/ui5/api/env/Format'
     ], function(Controller, JSONModel, ChartFormatter, Format) {
     "use strict";
-
     var Controller = Controller.extend("sap.viz.sample.Line.Line", {
-
-        dataPath : "sampledata/data.json",
         oVizFrame : null,
-        onInit : function (evt) {
+        onInit : function () {
             Format.numericFormatter(ChartFormatter.getInstance());
             var formatPattern = ChartFormatter.DefaultPattern;
             
@@ -40,7 +37,7 @@ sap.ui.define([
                     text: 'Jerry 的折线图'
                 }
             });
-            var dataModel = new JSONModel(this.dataPath);
+            var dataModel = new JSONModel("sampledata/data.json");
             oVizFrame.setModel(dataModel);
 
             var oPopOver = this.getView().byId("idPopOver");
