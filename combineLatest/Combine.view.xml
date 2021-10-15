@@ -1,0 +1,24 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	controllerName="sap.ui.demo.CombineLatest.Combine">
+	<l:VerticalLayout class="sapUiContentPadding">
+		<l:HorizontalLayout class="sapUiContentPadding" >
+			<Button text="Red" press="onPress" />
+			<Button text="Black" press="onPress" />
+		</l:HorizontalLayout>
+		<l:HorizontalLayout>
+			<Label text="Red:" labelFor="red"/>
+			<Text text="{/red}" id="red"/>
+		</l:HorizontalLayout>
+		<l:HorizontalLayout>
+			<Label text="Black:" labelFor="black"/>
+			<Text text="{/black}" id="black"/>
+		</l:HorizontalLayout>
+		<l:HorizontalLayout>
+			<Label text="Total:" labelFor="total"/>
+			<Text text="{/total}" id="total"/>
+		</l:HorizontalLayout>
+	</l:VerticalLayout>
+</mvc:View>

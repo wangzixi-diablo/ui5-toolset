@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	<title>SAPUI5 Walkthrough</title>
+	<!--We tell SAPUI5 core that resources in the sap.ui.demo.walkthrough namespace are located in the same folder as index.html. This is, for example, necessary for apps that run in the SAP Fiori launchpad.
+	!-->
+	<script
+		id="sap-ui-bootstrap"
+		src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+		data-sap-ui-theme="sap_belize"
+		data-sap-ui-libs="sap.m"
+		data-sap-ui-compatVersion="edge"
+		data-sap-ui-preload="async"
+		data-sap-ui-resourceroots='{
+			"sap.ui.demo.walkthrough": "./"
+		}'>
+	</script>
+	<script>
+	/*
+	We replace the instantiation of the sap.m.Text control by our new App XML view. The view is created by a factory function of SAPUI5 which makes sure that the view is correctly configured and can be extended by customers. The name is prefixed with the namespace sap.ui.demo.walkthrough.view in order to uniquely identify this resource.
+
+	From this step onwards, it is necessary to run the app on a Web server. We structure the app with multiple files that are loaded from the local file system. Without a Web server, this is prevented by the browser due to security reasons.
+	
+	*/
+		sap.ui.getCore().attachInit(function () {
+			sap.ui.xmlview({
+				viewName: "sap.ui.demo.walkthrough.view.App"
+			}).placeAt("content");
+		});
+	</script>
+</head>
+<body class="sapUiBody" id="content">
+</body>
+</html>

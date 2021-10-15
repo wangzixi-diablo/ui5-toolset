@@ -1,0 +1,35 @@
+<mvc:View controllerName="sap.viz.sample.Line.Line" xmlns="sap.m"
+    xmlns:viz="sap.viz.ui5.controls" xmlns:layout="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data" height="100%">
+    <layout:FixFlex id='chartFixFlex' minFlexSize="250">
+    <layout:fixContent>
+        <viz:Popover id="idPopOver"></viz:Popover>
+    </layout:fixContent>
+        <layout:flexContent>
+            <viz:VizFrame id="jerryFrame" uiConfig="{applicationSet:'fiori'}"
+                height='100%' width="100%" vizType='line'>
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{/milk}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="Week" value="{Week}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="Revenue" value="{Revenue}" />
+                            <viz.data:MeasureDefinition name="Cost" value="{Cost}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+
+                <viz:feeds>
+                    <viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure"
+                        values="Revenue" />
+                    <viz.feeds:FeedItem id='valueAxisFeed2' uid="valueAxis" type="Measure"
+                        values="Cost" />
+                    <viz.feeds:FeedItem id='categoryAxisFeed' uid="categoryAxis" type="Dimension"
+                        values="Week" />
+                </viz:feeds>
+            </viz:VizFrame>
+        </layout:flexContent>
+    </layout:FixFlex>
+</mvc:View>

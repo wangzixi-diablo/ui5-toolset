@@ -1,0 +1,25 @@
+<html>
+<script src="annyang.min.js"></script>
+<script>
+
+
+if (annyang) {
+  var commands = {
+    "Hello": function() {
+      alert(" I have heard your voice!");
+    }
+  };
+
+  var commands2 = {
+  	"Bye": function(){
+  		alert("再见！");
+  	}
+  }
+
+  annyang.addCommands(commands);
+  annyang.addCommands(commands2);
+
+  annyang.start();
+}
+</script>
+</html>

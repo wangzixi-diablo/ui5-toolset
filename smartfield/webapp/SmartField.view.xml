@@ -1,0 +1,27 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="sap.ui.demo.smartControls.SmartField"
+	xmlns:form="sap.ui.layout.form"
+	xmlns="sap.m"
+	xmlns:smartField="sap.ui.comp.smartfield">
+	<form:SimpleForm 
+		minWidth="1024"
+		maxContainerCols="2"
+		editable="true"
+		layout="ResponsiveGridLayout"
+		labelSpanL="3"
+		labelSpanM="3"
+		emptySpanL="4"
+		emptySpanM="4"
+		columnsL="1"
+		columnsM="1"
+		class="editableForm">
+		<form:content>
+			<smartField:SmartLabel labelFor="idPrice"/>
+			<smartField:SmartField value="{Price}" id="idPrice"/>
+			<Button
+				text="Print"
+				press="onPrintTriggered"/>
+		</form:content>
+	</form:SimpleForm>
+</mvc:View>

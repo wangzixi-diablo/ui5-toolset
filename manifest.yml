@@ -1,0 +1,9 @@
+---
+applications:
+- name: jerrylist
+  memory: 56MB
+  instances: 1
+  timeout: 180
+  # buildpack: https://github.com/cloudfoundry/nodejs-buildpack.git#v1.5.18
+  # buildpack: nodejs_buildpack
+  command: node --inspect local.js

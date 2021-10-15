@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+		<title>Jerry 的服务订单列表</title>
+		<script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+				id="sap-ui-bootstrap"
+				data-sap-ui-libs="sap.m"
+				data-sap-ui-theme="sap_bluecrystal"		
+				data-sap-ui-compatVersion="edge"
+				data-sap-ui-resourceroots='{"jerrylist": ""}'
+				>
+		</script>
+		<script>
+				sap.ui.getCore().attachInit(function(){
+					new sap.ui.core.ComponentContainer({
+						name:"jerrylist"
+					}).placeAt("content");
+				});
+		</script>
+	</head>
+	<body class="sapUiBody" role="application">
+		<div id="content"></div>
+	</body>
+</html>

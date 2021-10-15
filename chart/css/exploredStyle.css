@@ -1,0 +1,105 @@
+.panelStyle {
+    padding-bottom: 0px !important;
+}
+
+.panelStyle .sapMRbBLabel{
+    max-width: 100%;
+} 
+  
+.sapUiSizeCompact .panelStyle .sapMRbBLabel{
+    max-width: 100%;
+}
+
+.settingsLabel {
+    margin-bottom: 2px;
+}
+
+.settingsBox {
+    width: 150px;
+}
+
+.middleSettingsBox {
+    width: 180px;
+}
+
+.widerSettingsBox{
+	  width: 200px;
+}
+
+.settingsRadio {
+    margin: -3px 0 -3px -7px;
+    width: 100%;
+}
+
+.settingsRadioWithLongText{
+	margin: -3px 0 -3px -7px;
+}
+
+.settingsRadio .sapMRbBLabel{
+    padding-left: 2.95rem;
+}
+
+.settingsSwitch{
+    margin-top: 1px;
+}
+
+.settingsHBox {
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+}
+
+.settingsSelect {
+    margin-top: 7px;
+    height: 36px;
+}
+
+.settingsSelect .sapMSltLabel{
+	 line-height: 1.8rem;
+}
+
+.settingsSelect .sapMSltArrow {
+   line-height: 1.8rem;
+}
+
+.sapUiSizeCompact .sapMSltLabel{
+   line-height: 1.6rem;
+}
+
+.sapUiSizeCompact .sapMSltArrow {
+   line-height: 1.6rem;
+}
+
+.formTitleHeight .sapUiFormM .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 0;
+}
+
+.settingsFormGrid .sapUiFormResGrid.sapUiFormBackgrTranslucent>div{
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.settingsFormGrid .sapUiRespGridMedia-Std-Tablet.sapUiFormResGridMain>div:not(.sapUiRespGridSpanM12):not(.sapUiFormResGridLastContM),
+.settingsFormGrid .sapUiRespGridMedia-Std-Desktop.sapUiFormResGridMain>div:not(.sapUiRespGridSpanL12):not(.sapUiFormResGridLastContL),
+.settingsFormGrid .sapUiRespGridMedia-Std-LargeDesktop.sapUiFormResGridMain>div:not(.sapUiRespGridSpanXL12):not(.sapUiFormResGridLastContXL){
+    padding-right: 0;
+}
+
+.settingsFormGrid .sapUiRespGridMedia-Std-Tablet.sapUiFormResGridMain>div:not(.sapUiRespGridBreakM):not(.sapUiRespGridSpanM12),
+.settingsFormGrid .sapUiRespGridMedia-Std-Desktop.sapUiFormResGridMain>div:not(.sapUiRespGridBreakL):not(.sapUiRespGridSpanL12),
+.settingsFormGrid .sapUiRespGridMedia-Std-LargeDesktop.sapUiFormResGridMain>div:not(.sapUiRespGridBreakXL):not(.sapUiRespGridSpanXL12){
+    padding-left: 0;
+}
+
+.settingsFormGrid .sapUiFormResGridCont{
+    padding-bottom:0;
+}
+
+.rangeSliderPadding{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.VBoxHeight .sapMFlexBoxBGTransparent.sapMFlexItem.sapMFlexItemAlignAuto {
+    height: 100%;
+}

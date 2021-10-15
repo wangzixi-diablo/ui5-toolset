@@ -1,0 +1,35 @@
+{
+    "application": {
+        "id": "",
+        "title": "jerrylist.jerrylist",
+        "description": "Jerry Application in Fiori launchpad",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/webapp",
+        "appUrl": "#jerrylist-Display",
+        "navigationComponentName": "jerrylist",
+        "intentSemanticObject": "jerrylist",
+        "intentAction": "Display",
+        "html5ApplicationName": "jerrylist",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "4dddd0e7-a0e0-439c-858a-f2c617e4a0ed"
+        ],
+        "contentPackages": [
+            "fb1b4d71-542c-46a9-ba69-b421397b2b00"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "Jerry's tile",
+        "subtitle": "for demo purpose",
+        "searchKeywords": "Jerry's tile,for demo purpose",
+        "displayIconUrl": "sap-icon://approvals",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}
