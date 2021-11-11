@@ -4,9 +4,24 @@ sap.ui.jsview("jerrylist.view.App", {
 	getControllerName: function () {
 		return "jerrylist.view.App";
 	},
-	
+
+	heavyFunction(){
+		const N = 10000;
+
+		for( var i = 0; i < N; i++){
+			var node = document.createElement("div");
+			document.body.appendChild(node);
+		}		
+		var result = [];
+		/*for( var j =0; j < N; j++){
+			for( var k =0; k < N; k++){
+				result.push(k);
+			}
+		}*/
+	},
 	createContent: function (oController) {
 		
+		this.heavyFunction();
 		// to avoid scroll bars on desktop the root view must be set to block display
 		this.setDisplayBlock(true);
 		

@@ -7,7 +7,7 @@
   },
   "main": "local.js",
   "scripts": {
-    "start": "node --inspect local.js"
+    "start": "node --inspect-brk local.js"
   },
   "dependencies": {
     "@openui5/ts-types": "^1.60.3",

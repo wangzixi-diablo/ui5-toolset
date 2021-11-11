@@ -1,4 +1,8 @@
 // @ts-nocheck
+const log = require('./log.js');
+
+console.log('Jerry: ', log.log('Hello'));
+
 var path = require('path'), express = require('express');
 var qs = require('querystring');
 var app = express();
