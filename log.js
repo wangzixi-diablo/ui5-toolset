@@ -1,4 +1,6 @@
 (function (global, factory) {
+  debugger;
+  console.log('Jerry!');
   // @ts-ignore
   if (typeof define === "function" && define.amd) {
     // @ts-ignore
@@ -19,6 +21,5 @@
   function log() {
     console.log("Example of UMD module system");
   }
-  // expose log to other modules
   exports.log = log;
 });

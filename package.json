@@ -2,9 +2,6 @@
   "name": "jerrylist",
   "version": "0.3.0",
   "description": "A demo to host your UI5 application in Heroku",
-  "engines": {
-    "node": "8.14.1"
-  },
   "main": "local.js",
   "scripts": {
     "start": "node --inspect-brk local.js"
@@ -12,7 +9,8 @@
   "dependencies": {
     "@openui5/ts-types": "^1.60.3",
     "ejs": "^2.5.7",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "frameguard": "^4.0.0"
   },
   "devDependencies": {
     "request": "^2.81.0",
