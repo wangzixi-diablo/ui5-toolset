@@ -12,6 +12,14 @@ var url = require("url");
 var DEFAULTPORT = 3002;
 var port = process.env.PORT || DEFAULTPORT;
 
+var express = require('express');
+var app = express();
+
+app.use(function(req, res, next) {
+    res.setHeader("Content-Security-Policy", "script-src 'self' https://apis.google.com");
+    return next();
+});
+
 const frameguard = require('frameguard');
 app.use(frameguard({ action: 'SAMEORIGIN' }));
 
