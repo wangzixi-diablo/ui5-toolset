@@ -15,14 +15,15 @@ var port = process.env.PORT || DEFAULTPORT;
 var express = require('express');
 var app = express();
 
+/*
 app.use(function(req, res, next) {
     res.setHeader("Content-Security-Policy", "script-src 'self' https://apis.google.com;frame-ancestors 'none'");
     return next();
-});
+});*/
 
-const frameguard = require('frameguard');
+/*const frameguard = require('frameguard');
 app.use(frameguard({ action: 'SAMEORIGIN' }));
-
+*/
 /*app.use(bodyParser.text({
 	type: 'multipart/mixed'
 }));*/
@@ -77,6 +78,7 @@ app.all('*', function(req, res, next) {
   });
 
 app.use('/ui5', express.static(path.join(__dirname, 'webapp')));
+app.use('/barcode', express.static(path.join(__dirname, 'barcode')));
 app.use('/wt', express.static(path.join(__dirname, 'walkthrough')));
 app.use('/tree', express.static(path.join(__dirname, 'tree')));
 app.use('/mindmap', express.static(path.join(__dirname, 'mindmap')));
