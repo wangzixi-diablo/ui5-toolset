@@ -8,12 +8,13 @@ var request = require('request');
 var path = require('path'), express = require('express');
 var qs = require('querystring');
 var app = express();
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
 var url = require("url");
 var DEFAULTPORT = 3002;
 var port = process.env.PORT || DEFAULTPORT;
-
-var express = require('express');
-var app = express();
 
 /*
 app.use(function(req, res, next) {
@@ -96,6 +97,10 @@ app.use('/chart', express.static(path.join(__dirname, 'chart')));
 app.get('/', function(req, res){
    res.send("你好");
 });
+
+app.post('/token', function(req, res){
+	res.send("你好");
+ });
 
 app.get('/https://services.odata.org/*', function(req, res){
 	sendRequest(req).then(function(data){
