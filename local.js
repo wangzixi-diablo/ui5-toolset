@@ -79,6 +79,7 @@ app.all('*', function(req, res, next) {
   });
 
 app.use('/ui5', express.static(path.join(__dirname, 'webapp')));
+app.use('/csp', express.static(path.join(__dirname, 'csp')));
 app.use('/barcode', express.static(path.join(__dirname, 'barcode')));
 app.use('/wt', express.static(path.join(__dirname, 'walkthrough')));
 app.use('/tree', express.static(path.join(__dirname, 'tree')));
